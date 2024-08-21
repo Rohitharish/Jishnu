@@ -1,7 +1,13 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+import ScrollProvider from "./components/Scrollprovider";
+import { Major_Mono_Display } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
+const majorMono = Major_Mono_Display({
+  weight: "400",
+  subsets: ["latin"],
+});
 
 export const metadata = {
   title: "Create Next App",
@@ -11,7 +17,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={majorMono.className}>{children}</body>
     </html>
   );
 }
