@@ -1,3 +1,5 @@
+"use client";
+
 import Experience from "@/app/components/Experience/Experience";
 import Experience2 from "@/app/components/Experience/Experience2";
 import Experience3 from "@/app/components/Experience/Experience3";
