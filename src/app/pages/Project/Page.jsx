@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import Work from "../../components/Zelt/Work";
 import Detail from "../../components/Zelt/Detail";
