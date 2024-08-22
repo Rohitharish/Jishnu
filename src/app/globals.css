@@ -31,3 +31,14 @@ body {
     text-wrap: balance;
   }
 }
+@font-face {
+  font-family: "DanhaDa Display";
+  src: url("/fonts/DanhDa-Bold.otf") format("otf"),
+    url("/fonts/DanhDa-Bold.otf") format("otf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: "DanhaDa";
+}

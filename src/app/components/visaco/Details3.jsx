@@ -4,7 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-function Detail() {
+function Details3() {
   const DCref = useRef(null);
   const S1ref = useRef(null);
   const S2ref = useRef(null);
@@ -36,7 +36,9 @@ function Detail() {
       gsap.set(Sentence3, { xPercent: 0 });
       gsap.set(Sentencedetail1, { xPercent: 0 });
       gsap.set(Sentencedetail2, { xPercent: 0 });
-      gsap.set(Sentencedetail3, { xPercent: 0 });
+      gsap.set(Sentencedetail3, {
+        xPercent: 0,
+      });
       gsap.set(Line1, { width: "0%" });
       gsap.set(Line2, { width: "0%" });
       gsap.set(Line3, { width: "0%" });
@@ -49,8 +51,8 @@ function Detail() {
         xPercent: 100,
         scrollTrigger: {
           trigger: Detailmaincontainer,
-          start: "-50%",
-          end: "20%",
+          start: "-80%",
+          end: "-5%",
 
           scrub: 1,
         },
@@ -60,8 +62,8 @@ function Detail() {
         xPercent: 100,
         scrollTrigger: {
           trigger: Detailmaincontainer,
-          start: "-50%",
-          end: "20%",
+          start: "-80%",
+          end: "-20%",
 
           scrub: 1,
         },
@@ -69,10 +71,11 @@ function Detail() {
 
       tl.to(Sentence3, {
         xPercent: 100,
+
         scrollTrigger: {
           trigger: Detailmaincontainer,
           start: "-50%",
-          end: "20%",
+          end: "-10%",
 
           scrub: 1,
         },
@@ -82,7 +85,7 @@ function Detail() {
         scrollTrigger: {
           trigger: Detailmaincontainer,
           start: "-50%",
-          end: "20%",
+          end: "-10%",
 
           scrub: 1,
         },
@@ -91,8 +94,8 @@ function Detail() {
         xPercent: 100,
         scrollTrigger: {
           trigger: Detailmaincontainer,
-          start: "-50%",
-          end: "20%",
+          start: "-80%",
+          end: "-10%",
 
           scrub: 1,
         },
@@ -101,8 +104,8 @@ function Detail() {
         xPercent: 100,
         scrollTrigger: {
           trigger: Detailmaincontainer,
-          start: "-50%",
-          end: "20%",
+          start: "-60%",
+          end: "0%",
 
           scrub: 1,
         },
@@ -118,9 +121,9 @@ function Detail() {
         width: "100%",
         scrollTrigger: {
           trigger: Detailmaincontainer,
-          start: "-50%",
-          end: "20%",
-          scrub: true,
+          start: "-80%",
+          end: "-50%",
+          scrub: 3,
         },
       });
 
@@ -128,18 +131,18 @@ function Detail() {
         width: "100%",
         scrollTrigger: {
           trigger: Detailmaincontainer,
-          start: "-50%",
-          end: "20%",
-          scrub: true,
+          start: "-70%",
+          end: "-50%",
+          scrub: 3,
         },
       });
       tl.to(Line3, {
         width: "100%",
         scrollTrigger: {
           trigger: Detailmaincontainer,
-          start: "-50%",
-          end: "20%",
-          scrub: true,
+          start: "-60%",
+          end: "-50%",
+          scrub: 3,
         },
       });
 
@@ -154,7 +157,7 @@ function Detail() {
   return (
     <div
       ref={DCref}
-      className="relative grid grid-cols-12 h-[60vh] w-full text-xs md:text-sm lg:text-sm"
+      className="relative grid grid-cols-12 h-[60vh] w-full text-xs md:text-sm lg:text-sm px-[5%]"
     >
       <div
         ref={L1ref}
@@ -172,7 +175,7 @@ function Detail() {
       ></div>
       {/* first detail section */}
       <section className="col-span-12  md:col-span-12 lg:col-span-6  h-full w-full  overflow-hidden     ">
-        <div className="flex h-full w-full items-center justify-center">
+        <div className="flex h-full w-full items-center justify-start">
           <div className="flex relative ">
             <span className="flex h-full w-full items-center justify-start  ">
               sep 2023 - feb 2024
@@ -193,7 +196,7 @@ function Detail() {
             </span>
             <div
               ref={SD1ref}
-              className="absolute h-[20px]  w-[500px] flex left-0 bg-black overflow-hidden border-l-4"
+              className="absolute h-[20px]  w-[400px] flex left-0 bg-black overflow-hidden border-l-4"
             ></div>
           </div>
           <div className="flex relative ">
@@ -202,7 +205,7 @@ function Detail() {
             </span>
             <div
               ref={SD2ref}
-              className="absolute h-[20px]  w-[500px] flex left-0 bg-black overflow-hidden border-l-4"
+              className="absolute h-[20px]  w-[400px] flex left-0 bg-black overflow-hidden border-l-4"
             ></div>
           </div>
           <div className="flex relative ">
@@ -211,7 +214,7 @@ function Detail() {
             </span>
             <div
               ref={SD3ref}
-              className="absolute h-[20px]  w-[500px] flex left-0 bg-black overflow-hidden border-l-4"
+              className="absolute h-[20px]  w-[400px] flex left-0 bg-black overflow-hidden border-l-4"
             ></div>
           </div>
         </div>
@@ -219,7 +222,7 @@ function Detail() {
       {/* second text detail section */}
       {/* third text detail section */}
       <section className="col-span-12 md:col-span-12 lg:col-span-6 h-full w-full  overflow-hidden">
-        <div className="flex h-full w-full items-center justify-center">
+        <div className="flex h-full w-full items-center justify-start">
           <div className="flex relative ">
             <span className="flex h-full w-full items-center justify-start  ">
               technology
@@ -251,4 +254,4 @@ function Detail() {
   );
 }
 
-export default Detail;
+export default Details3;

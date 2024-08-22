@@ -7,7 +7,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-function Work() {
+function Work2() {
   const MCref = useRef(null);
   const ICref = useRef(null);
   const IMref = useRef(null);
@@ -28,7 +28,7 @@ function Work() {
 
     const setinitialposition = () => {
       gsap.set(Imagecontainer, { scale: 1 });
-      gsap.set(Image, { yPercent: 0 });
+      gsap.set(Image, { scale: 1 });
     };
 
     const Finalanimation = () => {
@@ -48,7 +48,7 @@ function Work() {
       tl.to(
         Image,
         {
-          yPercent: -50,
+          scale: 1.2,
           scrollTrigger: {
             trigger: Imagecontainer,
             start: "0%",
@@ -69,19 +69,19 @@ function Work() {
     };
   }, []);
   return (
-    <main className="flex flex-col relative  h-[200vh] w-full font-[modest] ">
+    <main className="flex flex-col relative  h-[200vh] w-full ">
       {/* This is the subcontainer with sticky property */}
       <section
         ref={ICref}
         className="flex sticky top-0 h-[100vh] w-full object-cover  overflow-clip "
       >
         <span className="flex h-full w-full items-center justify-center z-50 absolute text-8xl text-white">
-          ZELT
+          aunest
         </span>
         <img
           ref={IMref}
-          className="h-[300vh] w-[300vw] object-cover"
-          src="/Zelt.jpg"
+          className="h-[100vh] w-[100vw] object-cover"
+          src="/Aunest.png"
         />
       </section>
       {/* This is the subcontainer with sticky property */}
@@ -89,4 +89,4 @@ function Work() {
   );
 }
 
-export default Work;
+export default Work2;
