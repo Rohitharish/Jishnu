@@ -3,7 +3,7 @@
 import Project from "./pages/Project/Page";
 import ScrollProvider from "./components/Scrollprovider";
 
-import Experiencemain from "./pages/Experience/page";
+import Experiencemain from "./components/Experiencemain/page";
 export default function Home() {
   return (
     <ScrollProvider>
