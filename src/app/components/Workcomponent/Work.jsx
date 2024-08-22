@@ -7,54 +7,53 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-function Work2() {
-  const MCref = useRef(null);
+function ReusableScrollAnimation({
+  imageSrc = "/defaultImage.png",
+  text = "Default Text",
+  scaleInitial = 1,
+  scaleFinal = 1.2,
+  borderRadius = 10,
+  scrub = 1,
+  start = "0%",
+  end = "100%",
+  className = "",
+}) {
   const ICref = useRef(null);
   const IMref = useRef(null);
-  const textRef = useRef(null);
-  const L1Ref = useRef(null);
-  const IRef = useRef(null);
-  const B1ref = useRef(null);
 
   useEffect(() => {
     const Imagecontainer = ICref.current;
     const Image = IMref.current;
 
-    const line = L1Ref.current;
-
-    const Border1 = B1ref.current;
-
     const master = gsap.timeline();
 
-    const setinitialposition = () => {
-      gsap.set(Imagecontainer, { scale: 1 });
-      gsap.set(Image, { scale: 1 });
+    const setInitialPosition = () => {
+      gsap.set(Imagecontainer, { scale: scaleInitial });
+      gsap.set(Image, { scale: scaleInitial });
     };
 
-    const Finalanimation = () => {
+    const finalAnimation = () => {
       const tl = gsap.timeline();
 
       tl.to(Imagecontainer, {
         scale: 0.95,
-        borderRadius: 10,
+        borderRadius: borderRadius,
         scrollTrigger: {
           trigger: Imagecontainer,
-          start: "0%",
-          end: "100%",
-
-          scrub: 1,
+          start: start,
+          end: end,
+          scrub: scrub,
         },
       });
       tl.to(
         Image,
         {
-          scale: 1.2,
+          scale: scaleFinal,
           scrollTrigger: {
             trigger: Imagecontainer,
-            start: "0%",
-            end: "100%",
-
-            scrub: 1,
+            start: start,
+            end: end,
+            scrub: scrub,
           },
         },
         "<"
@@ -62,31 +61,32 @@ function Work2() {
 
       return tl;
     };
-    master.add(setinitialposition).add(Finalanimation);
+
+    master.add(setInitialPosition).add(finalAnimation);
 
     return () => {
       master.kill();
     };
-  }, []);
+  }, [scaleInitial, scaleFinal, borderRadius, scrub, start, end]);
+
   return (
-    <main className="flex flex-col relative  h-[200vh] w-full ">
-      {/* This is the subcontainer with sticky property */}
+    <main className={`flex flex-col relative h-[200vh] w-full font-[modest] ${className}`}>
       <section
         ref={ICref}
-        className="flex sticky top-0 h-[100vh] w-full object-cover  overflow-clip "
+        className="flex sticky top-0 h-[100vh] w-full object-cover overflow-clip"
       >
         <span className="flex h-full w-full items-center justify-center z-50 absolute text-8xl text-white">
-          aunest
+          {text}
         </span>
         <img
           ref={IMref}
           className="h-[100vh] w-[100vw] object-cover"
-          src="/Aunest.png"
+          src={imageSrc}
+          alt={text}
         />
       </section>
-      {/* This is the subcontainer with sticky property */}
     </main>
   );
 }
 
-export default Work2;
+export default ReusableScrollAnimation;

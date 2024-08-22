@@ -1,20 +1,50 @@
 "use client";
+import ReusableScrollAnimation from "@/app/components/Workcomponent/Work";
 import React from "react";
-import Work from "../../components/Zelt/Work";
-import Detail from "../../components/Zelt/Detail";
-import Work2 from "../../components/aunest/Work2";
-import Details2 from "../../components/aunest/Details2";
-import Work3 from "../../components/visaco/Work3";
-import Details3 from "../../components/visaco/Details3";
+import Detail from "@/app/components/Zelt/Detail";
+import Details2 from "@/app/components/aunest/Details2";
+import Details3 from "@/app/components/visaco/Details3";
 
 function Project() {
   return (
     <div div className="h-full w-full space-y-8">
-      <Work />
+      <ReusableScrollAnimation
+        imageSrc="/Zelt.png"
+        text="VISACO"
+        scaleInitial={1}
+        scaleFinal={1.2}
+        borderRadius={10}
+        scrub={1}
+        start="0%"
+        end="100%"
+        className="custom-styles"
+      />
       <Detail />
-      <Work2 />
+
+      <ReusableScrollAnimation
+        imageSrc="/Aunest.png"
+        text="ZELT"
+        scaleInitial={1}
+        scaleFinal={1.5}
+        borderRadius={20}
+        scrub={0.5}
+        start="10%"
+        end="90%"
+        className="another-custom-styles"
+      />
       <Details2 />
-      <Work3 />
+
+      <ReusableScrollAnimation
+        imageSrc="/Aunest.png"
+        text="AUNEST"
+        scaleInitial={1}
+        scaleFinal={1.5}
+        borderRadius={20}
+        scrub={0.5}
+        start="10%"
+        end="90%"
+        className="another-custom-styles"
+      />
       <Details3 />
     </div>
   );
