@@ -3,7 +3,7 @@
 import Project from "./pages/Page";
 import ScrollProvider from "./components/Scrollprovider";
 
-import Experience from "./components/Experience";
+import Experience from "./components/Experience/Experience";
 export default function Home() {
   return (
     <ScrollProvider>
@@ -11,6 +11,9 @@ export default function Home() {
         {/* <Intro /> */}
         <Project />
         <Experience />
+        <Experience />
+        <Experience />
+
         <div className="h-screen w-full"></div>
       </main>
     </ScrollProvider>
