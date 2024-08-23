@@ -2,17 +2,18 @@
 
 import Project from "./pages/Project/Page";
 import ScrollProvider from "./components/Scrollprovider";
+import Intro from "./components/Intro";
+<Intro />;
 
-import Experiencemain from "./components/Experiencemain/page";
+import ImageAnimator from "./components/Experience/Slide";
+
 export default function Home() {
   return (
     <ScrollProvider>
-      <main className="flex h-full flex-col items-center  bg-black">
-        {/* <Intro /> */}
+      <main className="flex flex-col h-full w-full  items-center  bg-black ">
+        <Intro />
         <Project />
-        <Experiencemain />
-
-        <div className="h-screen w-full"></div>
+        <ImageAnimator />
       </main>
     </ScrollProvider>
   );

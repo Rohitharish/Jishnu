@@ -12,12 +12,13 @@ function Project() {
         imageSrc="/Zelt.png"
         text="VISACO"
         scaleInitial={1}
-        scaleFinal={1.2}
+        scaleFinal={0.9}
+        imageinitialscale={1}
+        imagefinalscale={1.2}
         borderRadius={10}
         scrub={1}
         start="0%"
         end="100%"
-        className="custom-styles"
       />
       <Detail />
 
@@ -25,12 +26,13 @@ function Project() {
         imageSrc="/Aunest.png"
         text="ZELT"
         scaleInitial={1}
-        scaleFinal={1.5}
+        scaleFinal={0.9}
+        imageinitialscale={1}
+        imagefinalscale={1.2}
         borderRadius={20}
         scrub={0.5}
         start="10%"
         end="90%"
-        className="another-custom-styles"
       />
       <Details2 />
 
@@ -38,7 +40,9 @@ function Project() {
         imageSrc="/Aunest.png"
         text="AUNEST"
         scaleInitial={1}
-        scaleFinal={1.5}
+        scaleFinal={0.9}
+        imageinitialscale={1}
+        imagefinalscale={1.2}
         borderRadius={20}
         scrub={0.5}
         start="10%"

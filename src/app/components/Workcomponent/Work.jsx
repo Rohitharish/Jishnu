@@ -8,10 +8,12 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 function ReusableScrollAnimation({
-  imageSrc = "/defaultImage.png",
-  text = "Default Text",
+  imageSrc,
+  text,
   scaleInitial = 1,
-  scaleFinal = 1.2,
+  scaleFinal = 0.98,
+  imageinitialscale,
+  imagefinalscale,
   borderRadius = 10,
   scrub = 1,
   start = "0%",
@@ -20,23 +22,25 @@ function ReusableScrollAnimation({
 }) {
   const ICref = useRef(null);
   const IMref = useRef(null);
+  const Bref = useRef(null);
 
   useEffect(() => {
     const Imagecontainer = ICref.current;
     const Image = IMref.current;
+    const blur = Bref.current;
 
     const master = gsap.timeline();
 
     const setInitialPosition = () => {
       gsap.set(Imagecontainer, { scale: scaleInitial });
-      gsap.set(Image, { scale: scaleInitial });
+      gsap.set(Image, { scale: imageinitialscale });
     };
 
     const finalAnimation = () => {
       const tl = gsap.timeline();
 
       tl.to(Imagecontainer, {
-        scale: 0.95,
+        scale: scaleFinal,
         borderRadius: borderRadius,
         scrollTrigger: {
           trigger: Imagecontainer,
@@ -48,7 +52,7 @@ function ReusableScrollAnimation({
       tl.to(
         Image,
         {
-          scale: scaleFinal,
+          scale: imagefinalscale,
           scrollTrigger: {
             trigger: Imagecontainer,
             start: start,
@@ -67,10 +71,21 @@ function ReusableScrollAnimation({
     return () => {
       master.kill();
     };
-  }, [scaleInitial, scaleFinal, borderRadius, scrub, start, end]);
+  }, [
+    imageinitialscale,
+    imagefinalscale,
+    scaleInitial,
+    scaleFinal,
+    borderRadius,
+    scrub,
+    start,
+    end,
+  ]);
 
   return (
-    <main className={`flex flex-col relative h-[200vh] w-full font-[modest] ${className}`}>
+    <main
+      className={`flex flex-col relative h-[200vh] w-full font-[modest] ${className}`}
+    >
       <section
         ref={ICref}
         className="flex sticky top-0 h-[100vh] w-full object-cover overflow-clip"
