@@ -7,7 +7,7 @@ import Intro from "./components/Intro";
 import ImageAnimator from "./components/Experience/Slide";
 import Navbar from "./components/Navbar";
 import Scene from "./components/3delement/Scene";
-import Preloader from "./components/preloader";
+import Preloader from "./components/Preloader";
 
 export default function Home() {
   return (
