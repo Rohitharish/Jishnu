@@ -84,13 +84,13 @@ function ReusableScrollAnimation({
 
   return (
     <main
-      className={`flex flex-col relative h-[200vh] w-full font-[modest] ${className}`}
+      className={`flex flex-col relative h-[200vh] w-full font-custom  ${className}`}
     >
       <section
         ref={ICref}
         className="flex sticky top-0 h-[100vh] w-full object-cover overflow-clip"
       >
-        <span className="flex h-full w-full items-center justify-center z-50 absolute text-8xl text-white">
+        <span className="flex h-full w-full items-center justify-center z-50 absolute text-9xl text-white  tracking-widest">
           {text}
         </span>
         <img

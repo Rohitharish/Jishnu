@@ -1,9 +1,11 @@
-"use client"
+"use client";
+
 import gsap from "gsap";
+
 import React, { useEffect, useRef } from "react";
 
 function Intro() {
-  const text = "DEVELOPER";
+  const text = "Work";
 
   const textRef = useRef(null);
 
@@ -29,11 +31,11 @@ function Intro() {
   }, []);
 
   return (
-    <div className="flex  h-screen w-full items-center justify-center font-[lato] ">
+    <div className="flex  flex-row h-[10vh] w-full items-center justify-start Intro   ">
       <div
         ref={textRef}
-        className=" flex  overflow-hidden
-           text-[200px]"
+        className=" flex p-1   overflow-hidden
+           text-base "
       >
         {text.split("").map((letter, index) => (
           <span key={index} className="letter translate-y-full">
@@ -41,6 +43,7 @@ function Intro() {
           </span>
         ))}
       </div>
+      <div className="flex relative h-[1px] w-full bg-white"></div>
     </div>
   );
 }

@@ -8,8 +8,9 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        DanhaDa: ["DanhaDa", "monospace"],
+        custom: ["Sk-modest", "Sans Serif"],
       },
+
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":

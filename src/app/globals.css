@@ -31,14 +31,18 @@ body {
     text-wrap: balance;
   }
 }
+.Glass {
+  background: rgba(255, 255, 255, 0.05);
+
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5.7px);
+  -webkit-backdrop-filter: blur(5.7px);
+  border: 0.2px solid rgba(255, 255, 255, 0.31);
+}
 @font-face {
-  font-family: "DanhaDa Display";
-  src: url("/fonts/DanhDa-Bold.otf") format("otf"),
-    url("/fonts/DanhDa-Bold.otf") format("otf");
+  font-family: "Sk-modest";
+  src: url("/font/hinted-Sk-Modernist-Regular.woff") format("woff"),
+    url("/font/hinted-Sk-Modernist-Regular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
-}
-
-body {
-  font-family: "DanhaDa";
 }
