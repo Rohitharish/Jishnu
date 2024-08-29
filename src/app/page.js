@@ -1,9 +1,9 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Project from "./pages/Project/Page";
 import ScrollProvider from "./components/Scrollprovider";
 import Intro from "./components/Intro";
-
 import ImageAnimator from "./components/Experience/Slide";
 import Navbar from "./components/Navbar";
 import Scene from "./components/3delement/Scene";
@@ -15,8 +15,6 @@ export default function Home() {
       <Preloader />
       <Navbar />
       <Scene />
-
-      <Navbar />
       <main className="flex flex-col h-full w-full  items-center  bg-black ">
         <Intro />
         <Project />

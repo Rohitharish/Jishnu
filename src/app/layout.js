@@ -1,5 +1,6 @@
 import { Major_Mono_Display, Anton } from "next/font/google";
 import "./globals.css";
+import Preloader from "./components/Preloader";
 
 const majorMono = Major_Mono_Display({
   weight: "400",
@@ -14,7 +15,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${majorMono.className}`}>{children}</body>
+
+        <body className={`${majorMono.className}`}>{children}</body>
+   
     </html>
   );
 }
