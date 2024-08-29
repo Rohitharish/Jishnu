@@ -14,7 +14,7 @@ export default function Home() {
     <ScrollProvider>
       <Preloader />
       <Navbar />
-      <Scene />
+      {/* <Scene /> */}
       <main className="flex flex-col h-full w-full  items-center  bg-black ">
         <Intro />
         <Project />
