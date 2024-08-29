@@ -7,21 +7,22 @@ const ScrollProvider = ({ children }) => {
   const scrollRef = useRef(null);
 
   useEffect(() => {
-    const lenis = new Lenis({
-      // You can configure options here
-    });
+    const isLargeScreen = window.innerWidth > 768;
 
-    function animate(time) {
-      lenis.raf(time);
+    if (isLargeScreen) {
+      const lenis = new Lenis({});
+
+      function animate(time) {
+        lenis.raf(time);
+        requestAnimationFrame(animate);
+      }
+
       requestAnimationFrame(animate);
+
+      return () => {
+        lenis.destroy();
+      };
     }
-
-    requestAnimationFrame(animate);
-
-    return () => {
-      // Cleanup on unmount
-      lenis.destroy();
-    };
   }, []);
 
   return <div ref={scrollRef}>{children}</div>;
