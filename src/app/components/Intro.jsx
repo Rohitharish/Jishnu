@@ -6,16 +6,18 @@ import React, { useEffect, useRef } from "react";
 
 function Intro() {
   const text = "Work";
-
+  const lineref = useRef(null);
   const textRef = useRef(null);
 
   useEffect(() => {
     const letters = textRef.current.querySelectorAll(".letter");
+
+    const line = lineref.current;
+
+    gsap.set(line, { width: "0%" });
+
     const tl = gsap.timeline({
       ease: "power1.inOut",
-      onComplete: () => {
-        tl.kill(); // Kill the timeline when the animation completes
-      },
     });
 
     tl.to(letters, {
@@ -23,18 +25,35 @@ function Intro() {
       y: 0,
       stagger: 0.1,
       duration: 0.6,
+      scrollTrigger: {
+        trigger: letters,
+        start: "top 90%",
+        end: "bottom 20%",
+
+        scrub: 1,
+      },
+    });
+    tl.to(line, {
+      width: "100%",
+      scrollTrigger: {
+        trigger: letters,
+        start: "top 90%",
+        end: "bottom 20%",
+
+        scrub: 3,
+      },
     });
 
     return () => {
-      tl.kill(); // Cleanup in case the component unmounts before completion
+      tl.kill();
     };
   }, []);
 
   return (
-    <div className="flex  flex-row h-[10vh] w-full items-center justify-start Intro   ">
+    <div className="flex  flex-row h-[10vh] w-full items-center justify-start Intro  px-[.5%] ">
       <div
         ref={textRef}
-        className=" flex p-1   overflow-hidden
+        className=" flex items-start px-1   overflow-hidden
            text-base "
       >
         {text.split("").map((letter, index) => (
@@ -43,7 +62,10 @@ function Intro() {
           </span>
         ))}
       </div>
-      <div className="flex relative h-[1px] w-full bg-white"></div>
+      <div
+        ref={lineref}
+        className="flex  relative h-[1px] w-full  bg-zinc-500"
+      ></div>
     </div>
   );
 }

@@ -1,12 +1,33 @@
 "use client";
 
 import gsap from "gsap";
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
+import Marquee from "../Marquee";
 
 function ImageSlider() {
   const [activeIndex, setActiveIndex] = useState(0);
   const imageRefs = [useRef(null), useRef(null), useRef(null)];
   const textRefs = [useRef(null), useRef(null), useRef(null)];
+
+  useEffect(() => {
+    imageRefs.forEach((ref, index) => {
+      if (index !== 0) {
+        gsap.set(ref.current, {
+          xPercent: 100,
+          opacity: 0,
+        });
+      }
+    });
+
+    textRefs.forEach((ref, index) => {
+      if (index !== 0) {
+        gsap.set(ref.current, {
+          xPercent: 100,
+          opacity: 0,
+        });
+      }
+    });
+  }, []);
 
   const handleNext = () => {
     const nextIndex = (activeIndex + 1) % imageRefs.length;
@@ -63,63 +84,68 @@ function ImageSlider() {
   };
 
   return (
-    <div className="flex h-screen w-full items-center justify-center">
-      <button onClick={handlePrev} className="mr-4">
-        Prev
-      </button>
-      <div className="relative w-[60vw] h-[60vh] overflow-hidden">
-        <div ref={imageRefs[0]} className="absolute w-full h-full">
-          <div className="relative  flex items-center justify-start text-white text-base">
-            may 2024 - present
+    <div className="flex-col relative h-screen w-full items-center justify-center">
+      <div className="flex h-full flex-row items-center justify-center py-[5%]">
+        <button onClick={handlePrev} className="mr-4">
+          Prev
+        </button>
+        <div className="relative w-[60vw] h-[60vh] overflow-hidden">
+          <div ref={imageRefs[0]} className="absolute w-full h-full">
+            <div className="relative flex items-center justify-start text-white text-base">
+              May 2024 - Present
+            </div>
+            <img
+              src="/sample3.jpg"
+              alt="Image 1"
+              className="w-full h-full object-cover"
+            />
+            <div
+              ref={textRefs[0]}
+              className="absolute inset-0 flex items-center justify-center text-white text-2xl"
+            >
+              May 2024 - Present
+            </div>
           </div>
-          <img
-            src="/Zelt.png"
-            alt="Image 1"
-            className="w-full h-full object-cover"
-          />
-          <div
-            ref={textRefs[0]}
-            className="absolute inset-0 flex items-center justify-center text-white text-2xl"
-          >
-            May 2024 - Present
+          <div ref={imageRefs[1]} className="absolute w-full h-full">
+            <div className="relative flex items-center justify-start text-white text-base">
+              June 2024 - Future
+            </div>
+            <img
+              src="/sample4.jpg"
+              alt="Image 2"
+              className="w-full h-full object-cover"
+            />
+            <div
+              ref={textRefs[1]}
+              className="absolute inset-0 flex items-center justify-center text-white text-2xl"
+            >
+              June 2024 - Future
+            </div>
+          </div>
+          <div ref={imageRefs[2]} className="absolute w-full h-full">
+            <div className="relative flex items-center justify-start text-white text-base">
+              Moshi Moshi
+            </div>
+            <img
+              src="/sample5.jpg"
+              alt="Image 3"
+              className="w-full h-full object-cover"
+            />
+            <div
+              ref={textRefs[2]}
+              className="absolute inset-0 flex items-center justify-center text-white text-2xl"
+            >
+              Moshi Moshi
+            </div>
           </div>
         </div>
-        <div ref={imageRefs[1]} className="absolute w-full h-full">
-          <div className="relative  flex items-center justify-start text-white text-base">
-            may 2024 - present
-          </div>
-          <img
-            src="/Aunest.png"
-            alt="Image 2"
-            className="w-full h-full object-cover"
-          />
-          <div
-            ref={textRefs[1]}
-            className="absolute inset-0 flex items-center justify-center text-white text-2xl"
-          >
-            June 2024 - Future
-          </div>
-        </div>
-        <div ref={imageRefs[2]} className="absolute w-full h-full">
-          <div className="relative  flex items-center justify-start text-white text-base">
-            may 2024 - present
-          </div>
-          <img
-            src="/Zelt.png"
-            alt="Image 3"
-            className="w-full h-full object-cover"
-          />
-          <div
-            ref={textRefs[2]}
-            className="absolute inset-0 flex items-center justify-center text-white text-2xl"
-          >
-            moshi moshi
-          </div>
-        </div>
+        <button onClick={handleNext} className="ml-4">
+          Next
+        </button>
       </div>
-      <button onClick={handleNext} className="ml-4">
-        Next
-      </button>
+      <div>
+        <Marquee />
+      </div>
     </div>
   );
 }

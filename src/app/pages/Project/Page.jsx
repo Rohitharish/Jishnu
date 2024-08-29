@@ -9,7 +9,7 @@ function Project() {
   return (
     <div div className="h-full w-full space-y-8">
       <ReusableScrollAnimation
-        imageSrc="/Zelt.png"
+        imageSrc="/sample3.jpg"
         scaleInitial={1}
         scaleFinal={0.9}
         imageinitialscale={1}
@@ -22,7 +22,7 @@ function Project() {
       <Detail />
 
       <ReusableScrollAnimation
-        imageSrc="/zelts.png"
+        imageSrc="/sample1.jpg"
         scaleInitial={1}
         scaleFinal={0.9}
         imageinitialscale={1}
@@ -35,7 +35,7 @@ function Project() {
       <Details2 />
 
       <ReusableScrollAnimation
-        imageSrc="/Aunest.png"
+        imageSrc="/sample2.jpg"
         scaleInitial={1}
         scaleFinal={0.9}
         imageinitialscale={1}

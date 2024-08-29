@@ -31,13 +31,13 @@ function Preloader() {
       tl.to(Preloadertext, {
         opacity: 0,
 
-        duration: 5,
+        duration: 2,
       });
 
       tl.to(Reveal, {
         opacity: 0,
 
-        duration: 2,
+        duration: 1,
       });
       tl.to(Reveal, {
         yPercent: -100,
