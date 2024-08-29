@@ -43,24 +43,22 @@ function Details3() {
     );
     gsap.set([Line1, Line2, Line3], { width: "0%" });
 
-
     const Finalanimation = gsap.timeline({
       scrollTrigger: {
         trigger: Detailmaincontainer,
         start: "top bottom",
         end: "bottom top",
-
-        markers: true,
+       
         ease: "power2.inOut",
       },
     });
 
-    Finalanimation.to(Sentence1, { xPercent: 100, duration: 4 })
-      .to(Sentence2, { xPercent: 100, duration: 4 }, "-=3") // Overlap animations by 3 seconds
-      .to(Sentence3, { xPercent: 100, duration: 4 }, "-=3")
-      .to(Sentencedetail1, { xPercent: 100, duration: 4 }, "-=3")
-      .to(Sentencedetail2, { xPercent: 100, duration: 4 }, "-=3")
-      .to(Sentencedetail3, { xPercent: 100, duration: 4 }, "-=3");
+    Finalanimation.to(Sentence1, { xPercent: 100, duration: 2 })
+      .to(Sentence2, { xPercent: 100, duration: 2 }, "-=1.5") // Overlap animations by 1.5 seconds
+      .to(Sentence3, { xPercent: 100, duration: 2 }, "-=1.5")
+      .to(Sentencedetail1, { xPercent: 100, duration: 2 }, "-=1.5")
+      .to(Sentencedetail2, { xPercent: 100, duration: 2 }, "-=1.5")
+      .to(Sentencedetail3, { xPercent: 100, duration: 2 }, "-=1.5");
 
     // Line animation
     const Lineanimation = gsap.timeline({
@@ -68,14 +66,13 @@ function Details3() {
         trigger: Detailmaincontainer,
         start: "top bottom",
         end: "bottom top",
-
         ease: "power2.inOut",
       },
     });
 
-    Lineanimation.to(Line1, { width: "100%", duration: 3 })
-      .to(Line2, { width: "100%", duration: 3 }, "-=2")
-      .to(Line3, { width: "100%", duration: 3 }, "-=2");
+    Lineanimation.to(Line1, { width: "100%", duration: 2 })
+      .to(Line2, { width: "100%", duration: 2 }, "-=1")
+      .to(Line3, { width: "100%", duration: 2 }, "-=1");
 
     return () => {
       Finalanimation.kill();

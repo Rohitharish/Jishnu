@@ -1,15 +1,14 @@
-import React, { useMemo, useRef, useState } from "react";
-import { MeshTransmissionMaterial, useGLTF } from "@react-three/drei";
+import React, { useMemo, useRef, useState, useEffect } from "react";
+import { MeshTransmissionMaterial, useGLTF, Text } from "@react-three/drei";
 import { useFrame, useThree } from "@react-three/fiber";
-import { Text } from "@react-three/drei";
 import * as THREE from "three";
 
 function Model() {
   const { nodes } = useGLTF("/U.glb");
   const modelRef = useRef();
-
   const { viewport } = useThree();
   const [cursorPosition, setCursorPosition] = useState(new THREE.Vector3());
+  const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth > 1024);
 
   const materialProps = useMemo(
     () => ({
@@ -29,7 +28,7 @@ function Model() {
   };
 
   useFrame(() => {
-    if (modelRef.current) {
+    if (modelRef.current && isLargeScreen) {
       const minX = -viewport.width / 3 + 1;
       const maxX = viewport.width / 3 - 1;
       const minY = -viewport.height / 4 + 1;
@@ -46,6 +45,15 @@ function Model() {
     }
   });
 
+  useEffect(() => {
+    const handleResize = () => {
+      setIsLargeScreen(window.innerWidth > 1024);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <group
       scale={[
@@ -54,11 +62,11 @@ function Model() {
         1,
       ]}
       position={[0, 0, 0]}
-      onPointerMove={handlePointerMove}
+      onPointerMove={isLargeScreen ? handlePointerMove : false}
     >
       <mesh
-        scale={viewport.width / viewport.height}
-        position={[0, 0, -1]}
+        scale={(viewport.width / viewport.height, 1.5)}
+        position={[0, 0, 1]}
         ref={modelRef}
         geometry={nodes.defaultMaterial.geometry}
       >

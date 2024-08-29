@@ -24,13 +24,13 @@ function Preloader() {
 
       tl.to(Preloadertext, {
         opacity: 1,
-
-        duration: 5,
+        ease: "power2.out",
+        duration: 2,
       });
 
       tl.to(Preloadertext, {
         opacity: 0,
-
+        ease: "power2.out",
         duration: 2,
       });
 
@@ -63,8 +63,7 @@ function Preloader() {
         ref={PLTRef}
         className=" flex items-center justify-center text-white text-xs md:text-base lg:text-base w-[90%] md:w-[40%] lg:w-[30%]"
       >
-        Hey i am jishnu fullstack and mobile dev building dynamic and responsive
-        web applications using JavaScript, React, and Next.js.
+        Hey i am jishnu dev building dynamic and responsive web applications..
       </span>
     </div>
   );
