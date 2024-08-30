@@ -7,16 +7,15 @@ import ModelL from "./ModelL";
 import { Environment } from "@react-three/drei";
 
 function Scene() {
-  const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth > 1024); // Set the breakpoint for large screens
+  const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth > 1024);
 
   useEffect(() => {
     const handleResize = () => {
-      setIsLargeScreen(window.innerWidth > 1024); // Update based on your breakpoint
+      setIsLargeScreen(window.innerWidth > 1024);
     };
 
     window.addEventListener("resize", handleResize);
 
-    // Clean up listener on unmount
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
