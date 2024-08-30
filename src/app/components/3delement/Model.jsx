@@ -31,10 +31,10 @@ function Model() {
         <meshPhysicalMaterial
           envMap={scene.environment}
           color="#2C2C2C"
-          roughness={0.7} // Increased roughness to simplify appearance
-          metalness={0.1} // Lower metalness to reduce complexity
+          roughness={0.2} // Increased roughness to simplify appearance
+          metalness={0.8} // Lower metalness to reduce complexity
           opacity={0.8} // Keep opacity at 1 if transparency is not needed
-          transparent={false}
+          transparent={true}
         />
       </mesh>
     </group>
