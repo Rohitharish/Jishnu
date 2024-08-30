@@ -6,16 +6,11 @@ import Model from "./Model";
 import { Environment } from "@react-three/drei";
 
 function Scene() {
-  const isMobile = window.innerWidth < 768;
-
   return (
-    <Canvas
-      style={{ height: "100vh", width: "100%" }}
-      pixelRatio={isMobile ? 1 : Math.min(window.devicePixelRatio, 2)}
-    >
+    <Canvas style={{ height: "100vh", width: "100%" }}>
       <Suspense fallback={null}>
         <Model />
-        {!isMobile && <Environment preset="studio" />}
+        <Environment preset="studio" />
       </Suspense>
     </Canvas>
   );
