@@ -1,7 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import { Text, useGLTF } from "@react-three/drei";
 import { useThree } from "@react-three/fiber";
-
 import * as THREE from "three";
 
 function Model() {
@@ -10,6 +9,18 @@ function Model() {
   const { scene } = useThree();
   const { viewport } = useThree();
   const fontSize = viewport.width * 0.2;
+
+  useEffect(() => {
+    const mesh = modelRef.current;
+
+    // Cleanup function
+    return () => {
+      if (mesh) {
+        mesh.geometry.dispose(); // Dispose of geometry
+        mesh.material.dispose(); // Dispose of material
+      }
+    };
+  }, []);
 
   return (
     <group>
