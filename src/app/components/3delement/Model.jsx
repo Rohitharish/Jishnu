@@ -12,11 +12,7 @@ function Model() {
 
   const materialProps = useMemo(
     () => ({
-      thickness: 1,
       roughness: 0.2,
-      transmission: 1,
-      ior: 1.05,
-      chromaticAberration: 0.009,
     }),
     []
   );
@@ -40,7 +36,7 @@ function Model() {
           new THREE.Vector3(maxX, maxY, 0)
         );
 
-      modelRef.current.position.lerp(clampedPosition, 0.009);
+      modelRef.current.position.lerp(clampedPosition, 0.03);
     }
   });
 
