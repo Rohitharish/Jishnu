@@ -12,7 +12,11 @@ function Model() {
 
   const materialProps = useMemo(
     () => ({
-      color: "white",
+      thickness: 1,
+      roughness: 0.2,
+      transmission: 1,
+      ior: 1.05,
+      chromaticAberration: 0.009,
     }),
     []
   );
@@ -65,7 +69,7 @@ function Model() {
         ref={modelRef}
         geometry={nodes.defaultMaterial.geometry}
       >
-        <meshBasicMaterial {...materialProps} />
+        <MeshTransmissionMaterial {...materialProps} />
       </mesh>
       <Text position={[0, 0, -4]} fontSize={viewport.width / 2.4} color="white">
         bonjour

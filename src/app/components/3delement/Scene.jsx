@@ -11,7 +11,7 @@ function Scene() {
       <Suspense fallback={null}>
         <Model />
 
-        <Environment preset="studio" />
+        {/* <Environment preset="studio" /> */}
       </Suspense>
     </Canvas>
   );
