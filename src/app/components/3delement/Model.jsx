@@ -12,11 +12,7 @@ function Model() {
 
   const materialProps = useMemo(
     () => ({
-      thickness: 1,
-      roughness: 0.2,
-      transmission: 1,
-      ior: 1.05,
-      chromaticAberration: 0.009,
+      thickness: 0.5,
     }),
     []
   );
