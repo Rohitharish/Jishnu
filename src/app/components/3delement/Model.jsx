@@ -12,7 +12,11 @@ function Model() {
 
   const materialProps = useMemo(
     () => ({
+      thickness: 1,
       roughness: 0.2,
+      transmission: 1,
+      ior: 1.05,
+      chromaticAberration: 0.009,
     }),
     []
   );
@@ -36,7 +40,7 @@ function Model() {
           new THREE.Vector3(maxX, maxY, 0)
         );
 
-      modelRef.current.position.lerp(clampedPosition, 0.03);
+      modelRef.current.position.lerp(clampedPosition, 0.009);
     }
   });
 
@@ -67,9 +71,9 @@ function Model() {
       >
         <MeshTransmissionMaterial {...materialProps} />
       </mesh>
-      <Text position={[0, 0, -4]} fontSize={viewport.width / 2.4} color="white">
+      {/* <Text position={[0, 0, -4]} fontSize={viewport.width / 2.4} color="white">
         bonjour
-      </Text>
+      </Text> */}
     </group>
   );
 }
