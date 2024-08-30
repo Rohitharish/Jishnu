@@ -4,7 +4,7 @@ import { useFrame, useThree } from "@react-three/fiber";
 import * as THREE from "three";
 
 function Model() {
-  const { nodes } = useGLTF("/U.glb");
+  const { nodes } = useGLTF("/c.glb");
   const modelRef = useRef();
   const { viewport } = useThree();
   const [cursorPosition, setCursorPosition] = useState(new THREE.Vector3());
@@ -71,9 +71,9 @@ function Model() {
       >
         <MeshTransmissionMaterial {...materialProps} />
       </mesh>
-      {/* <Text position={[0, 0, -4]} fontSize={viewport.width / 2.4} color="white">
+      <Text position={[0, 0, -4]} fontSize={viewport.width / 2.4} color="white">
         bonjour
-      </Text> */}
+      </Text>
     </group>
   );
 }
