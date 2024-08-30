@@ -26,23 +26,23 @@ function Model() {
     setCursorPosition(new THREE.Vector3(x, y, 0));
   };
 
-  useFrame(() => {
-    if (modelRef.current && isLargeScreen) {
-      const minX = -viewport.width / 3 + 1;
-      const maxX = viewport.width / 3 - 1;
-      const minY = -viewport.height / 4 + 1;
-      const maxY = viewport.height / 4 - 1;
+  // useFrame(() => {
+  //   if (modelRef.current && isLargeScreen) {
+  //     const minX = -viewport.width / 3 + 1;
+  //     const maxX = viewport.width / 3 - 1;
+  //     const minY = -viewport.height / 4 + 1;
+  //     const maxY = viewport.height / 4 - 1;
 
-      const clampedPosition = cursorPosition
-        .clone()
-        .clamp(
-          new THREE.Vector3(minX, minY, 0),
-          new THREE.Vector3(maxX, maxY, 0)
-        );
+  //     const clampedPosition = cursorPosition
+  //       .clone()
+  //       .clamp(
+  //         new THREE.Vector3(minX, minY, 0),
+  //         new THREE.Vector3(maxX, maxY, 0)
+  //       );
 
-      modelRef.current.position.lerp(clampedPosition, 0.009);
-    }
-  });
+  //     modelRef.current.position.lerp(clampedPosition, 0.009);
+  //   }
+  // });
 
   useEffect(() => {
     const handleResize = () => {
