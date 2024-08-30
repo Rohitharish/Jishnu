@@ -30,16 +30,11 @@ function Model() {
       <mesh ref={modelRef} geometry={nodes.defaultMaterial.geometry}>
         <meshPhysicalMaterial
           envMap={scene.environment}
-          metalness={0}
-          roughness={0.2}
-          transmission={1.5}
-          thickness={0.5}
-          transparent={true}
-          opacity={1}
-          reflectivity={0.5}
-          clearcoat={1}
-          clearcoatRoughness={0}
           color="#2C2C2C"
+          roughness={0.7} // Increased roughness to simplify appearance
+          metalness={0.1} // Lower metalness to reduce complexity
+          opacity={0.8} // Keep opacity at 1 if transparency is not needed
+          transparent={false}
         />
       </mesh>
     </group>
