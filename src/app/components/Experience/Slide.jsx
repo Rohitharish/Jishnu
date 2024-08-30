@@ -85,11 +85,14 @@ function ImageSlider() {
 
   return (
     <div className="flex-col relative h-screen w-full items-center justify-center">
-      <div className="flex h-full flex-row items-center justify-center py-[5%]">
-        <button onClick={handlePrev} className="mr-4">
+      <div className="flex h-full flex-col md:flex-row lg:flex-row items-center justify-center py-[5%]">
+        <button
+          onClick={handlePrev}
+          className="mr-4 invisible md:visible lg:visible"
+        >
           Prev
         </button>
-        <div className="relative w-[60vw] h-[60vh] overflow-hidden">
+        <div className="relative w-[80vw] md:w-[60vw] lg:w-[60vw] h-[80vh] md:h-[60vh] lg:h-[60vh] overflow-hidden">
           <div ref={imageRefs[0]} className="absolute w-full h-full">
             <div className="relative flex items-center justify-start text-white text-base">
               May 2024 - Present

@@ -57,11 +57,11 @@ function Preloader() {
   return (
     <div
       ref={RevealRef}
-      className="flex flex-col items-center justify-center fixed top-0 h-[100vh] w-full bg-black overflow-hidden  z-[90] "
+      className="flex  items-center justify-center fixed top-0 h-[100vh] w-full bg-black overflow-hidden  z-[90] "
     >
       <span
         ref={PLTRef}
-        className=" flex items-center justify-center text-white text-xs md:text-base lg:text-base w-[90%] md:w-[40%] lg:w-[30%]"
+        className=" flex text-center items-center justify-center text-white text-xs md:text-base lg:text-base w-full md:w-[40%] lg:w-[30%] "
       >
         Hey i am jishnu dev building dynamic and responsive web applications..
       </span>

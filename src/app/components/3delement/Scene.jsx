@@ -1,15 +1,29 @@
 "use client";
 
 import { Canvas } from "@react-three/fiber";
-import React, { Suspense } from "react";
+import React, { Suspense, useState, useEffect } from "react";
 import Model from "./Model";
+import ModelL from "./ModelL";
 import { Environment } from "@react-three/drei";
 
 function Scene() {
+  const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth > 1024); // Set the breakpoint for large screens
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsLargeScreen(window.innerWidth > 1024); // Update based on your breakpoint
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    // Clean up listener on unmount
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <Canvas style={{ height: "100vh", width: "100%" }}>
       <Suspense fallback={null}>
-        <Model />
+        {isLargeScreen ? <ModelL /> : <Model />}
         <Environment preset="studio" />
       </Suspense>
     </Canvas>

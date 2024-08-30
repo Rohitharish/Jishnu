@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import { Text, useGLTF } from "@react-three/drei";
-import { useThree } from "@react-three/fiber";
+import { useThree, useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 
 function Model() {
@@ -9,31 +9,43 @@ function Model() {
   const { scene } = useThree();
   const { viewport } = useThree();
   const fontSize = viewport.width * 0.2;
-
+  const bounceAmplitude = 0.1;
+  const bounceSpeed = 0.6;
   useEffect(() => {
     const mesh = modelRef.current;
 
-    // Cleanup function
     return () => {
       if (mesh) {
-        mesh.geometry.dispose(); // Dispose of geometry
-        mesh.material.dispose(); // Dispose of material
+        mesh.geometry.dispose();
+        mesh.material.dispose();
       }
     };
   }, []);
+  useFrame(({ clock }) => {
+    if (modelRef.current) {
+      const elapsedTime = clock.getElapsedTime();
+
+      const yOffset = Math.sin(elapsedTime * bounceSpeed) * bounceAmplitude;
+      modelRef.current.position.y = yOffset;
+    }
+  });
 
   return (
     <group>
       <Text position={[0, 0, 1]} fontSize={fontSize} color="white">
         bonjour
       </Text>
-      <mesh ref={modelRef} geometry={nodes.defaultMaterial.geometry}>
+      <mesh
+        position={[0, 0, 2]}
+        ref={modelRef}
+        geometry={nodes.defaultMaterial.geometry}
+      >
         <meshPhysicalMaterial
           envMap={scene.environment}
           color="#2C2C2C"
-          roughness={0.2} // Increased roughness to simplify appearance
-          metalness={0.8} // Lower metalness to reduce complexity
-          opacity={0.8} // Keep opacity at 1 if transparency is not needed
+          roughness={0.4}
+          metalness={1}
+          opacity={0.6}
           transparent={true}
         />
       </mesh>

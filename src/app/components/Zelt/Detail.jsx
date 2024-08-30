@@ -102,9 +102,9 @@ function Detail() {
 
       {/* first detail section */}
       <section className="col-span-12 md:col-span-12 lg:col-span-6 h-full w-full overflow-hidden">
-        <div className="flex h-full w-full items-center justify-start">
+        <div className="flex h-full w-full items-center justify-center md:justify-start lg:justify-start">
           <div className="flex relative">
-            <span className="flex h-full w-full items-center justify-start">
+            <span className="flex h-full w-full items-center justify-center md:justify-start lg:justify-start">
               sep 2023 - feb 2024
             </span>
             <div
@@ -119,7 +119,7 @@ function Detail() {
       <section className="col-span-12 md:col-span-12 lg:col-span-6 h-full w-full overflow-hidden">
         <div className="flex flex-col h-full w-full items-center justify-center">
           <div className="flex relative">
-            <span className="flex h-full w-full items-center justify-start">
+            <span className="flex h-full w-full items-center justify-center md:justify-start lg:justify-start">
               jewelry booking platform with
             </span>
             <div
@@ -128,7 +128,7 @@ function Detail() {
             ></div>
           </div>
           <div className="flex relative">
-            <span className="flex h-full w-full items-center justify-start">
+            <span className="flex h-full w-full items-center justify-center md:justify-start lg:justify-start">
               delivery for custom gold jewelry.
             </span>
             <div
@@ -137,7 +137,7 @@ function Detail() {
             ></div>
           </div>
           <div className="flex relative">
-            <span className="flex h-full w-full items-center justify-start">
+            <span className="flex h-full w-full items-center justify-center md:justify-start lg:justify-start">
               jewelry booking platform with
             </span>
             <div
@@ -150,9 +150,9 @@ function Detail() {
 
       {/* third text detail section */}
       <section className="col-span-12 md:col-span-12 lg:col-span-6 h-full w-full overflow-hidden">
-        <div className="flex h-full w-full items-center justify-start">
+        <div className="flex h-full w-full items-center justify-center md:justify-start lg:justify-start">
           <div className="flex relative">
-            <span className="flex h-full w-full items-center justify-start">
+            <span className="flex h-full w-full items-center justify-center md:justify-start lg:justify-start">
               technology
             </span>
             <div
@@ -167,7 +167,7 @@ function Detail() {
       <section className="col-span-12 md:col-span-12 lg:col-span-6 h-full w-full overflow-hidden">
         <div className="flex h-full w-full items-center justify-center">
           <div className="flex relative">
-            <span className="flex h-full w-full items-center justify-start">
+            <span className="flex h-full w-full items-center justify-center md:justify-start lg:justify-start">
               react native, react js
             </span>
             <div
