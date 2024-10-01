@@ -6,7 +6,7 @@ import Link from "next/link";
 import Contact from "../Contact/Contact";
 
 const menulinks = [
-  { path: "/pages/Project", label: "[Work]" },
+  { path: "/pages/Work", label: "[Work]" },
   { path: "/pages/About", label: "[About]" },
   { path: "/pages/Experience", label: "[eXperience]" },
 ];
