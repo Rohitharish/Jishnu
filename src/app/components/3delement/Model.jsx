@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import { Text, useGLTF } from "@react-three/drei";
-import { useThree, useFrame } from "@react-three/fiber";
+import { useThree, useFrame, useLoader } from "@react-three/fiber";
 import * as THREE from "three";
 
 function Model() {
@@ -11,6 +11,8 @@ function Model() {
   const fontSize = viewport.width * 0.2;
   const bounceAmplitude = 0.1;
   const bounceSpeed = 0.6;
+
+  const imageTexture = useLoader(THREE.TextureLoader, "/sample1.jpg");
   useEffect(() => {
     const mesh = modelRef.current;
 
@@ -32,9 +34,6 @@ function Model() {
 
   return (
     <group>
-      <Text position={[0, 0, 1]} fontSize={fontSize} color="white">
-        bonjour
-      </Text>
       <mesh
         position={[0, 0, 2]}
         ref={modelRef}
@@ -49,6 +48,13 @@ function Model() {
           transparent={true}
         />
       </mesh>
+      <mesh position={[0, 0, -1]}>
+        <planeGeometry args={[2, 2]} />
+        <meshBasicMaterial map={imageTexture} />
+      </mesh>
+      <Text position={[0, 1, 0]} fontSize={viewport.width / 15} color="white">
+        Adios
+      </Text>
     </group>
   );
 }

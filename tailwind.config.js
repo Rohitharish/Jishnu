@@ -8,7 +8,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        custom: ["Sk-modest", "Sans Serif"],
+        majorMono: ['"Major Mono Display"', "monospace"],
       },
 
       backgroundImage: {

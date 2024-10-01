@@ -1,14 +1,13 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import Project from "./pages/Project/Page";
 import ScrollProvider from "./components/Scrollprovider";
-import Intro from "./components/Intro";
-import ImageAnimator from "./components/Experience/Slide";
-import Navbar from "./components/Navbar";
 
 import Preloader from "./components/Preloader";
 import dynamic from "next/dynamic";
+import Intro from "./components/Intro";
+import Project from "./pages/Project/page";
+import Experience from "./components/Experience/Moshi";
+import Menu from "./components/Menu/Menu";
 
 const DynamicScene = dynamic(() => import("./components/3delement/Scene"), {
   ssr: false,
@@ -16,16 +15,10 @@ const DynamicScene = dynamic(() => import("./components/3delement/Scene"), {
 
 export default function Home() {
   return (
-    <ScrollProvider>
+    <>
       <Preloader />
-      <Navbar />
-      <DynamicScene />
 
-      <main className="flex flex-col h-full w-full  items-center  bg-black ">
-        <Intro />
-        <Project />
-        <ImageAnimator />
-      </main>
-    </ScrollProvider>
+      <DynamicScene />
+    </>
   );
 }

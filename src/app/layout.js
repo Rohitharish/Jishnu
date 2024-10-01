@@ -1,23 +1,32 @@
-import { Major_Mono_Display, Anton } from "next/font/google";
+import { Major_Mono_Display, Poppins } from "next/font/google";
 import "./globals.css";
-import Preloader from "./components/Preloader";
+import ScrollProvider from "./components/Scrollprovider";
+import Menu from "./components/Menu/Menu";
 
 const majorMono = Major_Mono_Display({
   weight: "400",
   subsets: ["latin"],
 });
 
+const poppins = Poppins({
+  weight: ["400", "700"],
+  subsets: ["latin"],
+});
+
 export const metadata = {
-  title: "Black cat",
-  description: "annan ka portfolio",
+  title: "JISHNU",
+  description: "portfolio",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-
-        <body className={`${majorMono.className}`}>{children}</body>
-   
+      <body className={`${majorMono.className} ${poppins.className}`}>
+        <ScrollProvider>
+          <Menu />
+          {children}
+        </ScrollProvider>
+      </body>
     </html>
   );
 }

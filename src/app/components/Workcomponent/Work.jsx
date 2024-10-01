@@ -17,17 +17,18 @@ function ReusableScrollAnimation({
   borderRadius = 10,
   scrub = 1,
   start = "0%",
-  end = "100%",
+  end = "bottom top",
   className = "",
 }) {
   const ICref = useRef(null);
   const IMref = useRef(null);
   const Bref = useRef(null);
 
+  const ref = useRef(null);
+
   useEffect(() => {
     const Imagecontainer = ICref.current;
     const Image = IMref.current;
-    const blur = Bref.current;
 
     const master = gsap.timeline();
 
@@ -84,7 +85,8 @@ function ReusableScrollAnimation({
 
   return (
     <main
-      className={`flex flex-col relative h-[100vh] md:h-[200vh]  lg:h-[200vh] w-full font-custom  ${className}`}
+      className={`flex flex-col relative h-[50vh] md:h-[200vh]  lg:h-[200vh] w-full font-custom  ${className}`}
+      ref={ref}
     >
       <section
         ref={ICref}

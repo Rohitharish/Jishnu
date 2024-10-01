@@ -61,7 +61,7 @@ function Preloader() {
     >
       <span
         ref={PLTRef}
-        className=" flex text-center items-center justify-center text-white text-xs md:text-base lg:text-base w-full md:w-[40%] lg:w-[30%] "
+        className=" flex text-center items-center justify-center text-white text-xs md:text-base lg:text-base w-full md:w-[40%] lg:w-[30%] font-majorMono"
       >
         Hey i am jishnu dev building dynamic and responsive web applications..
       </span>

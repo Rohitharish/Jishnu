@@ -1,6 +1,7 @@
+"use client";
 import React, { useMemo, useRef, useState, useEffect } from "react";
 import { MeshTransmissionMaterial, useGLTF, Text } from "@react-three/drei";
-import { useFrame, useThree } from "@react-three/fiber";
+import { useFrame, useThree, useLoader } from "@react-three/fiber";
 import * as THREE from "three";
 
 function ModelL() {
@@ -10,9 +11,11 @@ function ModelL() {
   const [cursorPosition, setCursorPosition] = useState(new THREE.Vector3());
   const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth > 1024);
 
+  const imageTexture = useLoader(THREE.TextureLoader, "/Propic.png");
+
   const materialProps = useMemo(
     () => ({
-      thickness: 0.2,
+      thickness: 0.6,
       roughness: 0.4,
       ior: 0.9,
     }),
@@ -69,8 +72,13 @@ function ModelL() {
       >
         <MeshTransmissionMaterial {...materialProps} />
       </mesh>
-      <Text position={[0, 0, -4]} fontSize={viewport.width / 2.4} color="white">
-        bonjour
+      <mesh position={[0, 0, -1]}>
+        <planeGeometry args={[2.2, 2]} />
+        <meshBasicMaterial map={imageTexture} />
+      </mesh>
+
+      <Text position={[0, 0, 0]} fontSize={viewport.width / 50} color="white">
+        Bonjour
       </Text>
     </group>
   );
