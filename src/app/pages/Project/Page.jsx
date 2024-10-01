@@ -5,7 +5,7 @@ import Link from "next/link";
 import { gsap } from "gsap";
 import Maintext from "@/app/components/Maintextanimation/Maintext";
 
-function Project() {
+function page() {
   const project1 = useRef(null);
   const project2 = useRef(null);
   const project3 = useRef(null);
@@ -101,4 +101,4 @@ function Project() {
   );
 }
 
-export default Project;
+export default page;
