@@ -5,7 +5,7 @@ import Link from "next/link";
 import { gsap } from "gsap";
 import Maintext from "@/app/components/Maintextanimation/Maintext";
 
-function page() {
+function Project() {
   const project1 = useRef(null);
   const project2 = useRef(null);
   const project3 = useRef(null);
@@ -67,7 +67,7 @@ function page() {
           />
         </div>
         <div className=" row-span-12  md:row-span-6 lg:row-span-6 col-span-12 md:col-span-6 lg:col-span-6 h-full w-full  overflow-hidden">
-          <Link href="/pages/Project/Zelt">
+          <Link href="/pages/Zelt">
             <img
               ref={project1}
               className="h-full w-full object-cover "
@@ -77,7 +77,7 @@ function page() {
           </Link>
         </div>
         <div className=" row-span-12 md:row-span-8 lg:row-span-8 col-span-12 md:col-span-6 lg:col-span-6 h-full w-full  overflow-hidden">
-          <Link href="/pages/Project/Visaco">
+          <Link href="/pages/Visaco">
             <img
               ref={project2}
               className="h-full w-full object-cover "
@@ -87,7 +87,7 @@ function page() {
           </Link>
         </div>
         <div className="row-span-12  md:row-span-6 lg:row-span-6 col-span-12 md:col-span-6 lg:col-span-6 h-full w-full  overflow-hidden">
-          <Link href="/pages/Project/Aunest">
+          <Link href="/pages/Aunest">
             <img
               ref={project3}
               className="h-full w-full object-cover "
@@ -101,4 +101,4 @@ function page() {
   );
 }
 
-export default page;
+export default Project;
