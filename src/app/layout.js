@@ -11,6 +11,7 @@ const majorMono = Major_Mono_Display({
 const poppins = Poppins({
   weight: ["400", "700"],
   subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata = {

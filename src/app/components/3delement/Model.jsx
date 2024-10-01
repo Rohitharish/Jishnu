@@ -8,11 +8,11 @@ function Model() {
   const modelRef = useRef();
   const { scene } = useThree();
   const { viewport } = useThree();
-  const fontSize = viewport.width * 0.2;
+
   const bounceAmplitude = 0.1;
   const bounceSpeed = 0.6;
 
-  const imageTexture = useLoader(THREE.TextureLoader, "/sample1.jpg");
+  const imageTexture = useLoader(THREE.TextureLoader, "/Propic.png");
   useEffect(() => {
     const mesh = modelRef.current;
 
@@ -49,11 +49,11 @@ function Model() {
         />
       </mesh>
       <mesh position={[0, 0, -1]}>
-        <planeGeometry args={[2, 2]} />
+        <planeGeometry args={[2.2, 2]} />
         <meshBasicMaterial map={imageTexture} />
       </mesh>
-      <Text position={[0, 1, 0]} fontSize={viewport.width / 15} color="white">
-        Adios
+      <Text position={[0, 0, 0]} fontSize={viewport.width / 15} color="white">
+        Bonjour
       </Text>
     </group>
   );
