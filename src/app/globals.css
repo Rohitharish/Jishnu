@@ -24,18 +24,11 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+  font-family: "Major Mono Display", "Poppins", monospace;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
-}
-
-@font-face {
-  font-family: "Sk-modest";
-  src: url("/font/hinted-Sk-Modernist-Regular.woff") format("woff"),
-    url("/font/hinted-Sk-Modernist-Regular.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
 }
