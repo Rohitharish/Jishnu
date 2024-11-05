@@ -107,9 +107,9 @@ function Aunest() {
         text="Aunest"
       />
 
-      <section className="flex h-[50vh] lg:h-[100vh] w-full  flex-col items-end justify-center pl-[8%] lg:pl-[40%]  font-majorMono ">
+      <section className="flex h-[50vh] lg:h-[100vh] w-full  flex-col items-end justify-center pl-[8%] lg:pl-[40%]  ">
         <Multi
-          className=" w-full md-w-1/2 lg:w-1/2    text-white text-base leading-[1.2] font-majorMono lowercase"
+          className=" w-full md-w-1/2 lg:w-1/2    text-white text-base leading-[1.2] font-major lowercase"
           text="Designed and implemented mobile applications for a jewellery management system and an e-commerce management system using React Native. Enhanced features for vendor creation, product recommendations, and product order tracking ."
         />
       </section>

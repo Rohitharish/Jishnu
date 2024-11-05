@@ -64,7 +64,7 @@ function Menu() {
   }, [isMenuOpen]);
 
   return (
-    <div className="fixed h-[200px] w-full top-[3%] z-[100] font-majorMono">
+    <div className="fixed h-[200px] w-full top-[3%] z-[100] font-major ">
       <Contact />
       <button
         className="absolute text-white left-[2%] rounded-lg flex items-end z-[100] overflow-hidden"
