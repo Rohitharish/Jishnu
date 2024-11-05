@@ -62,7 +62,7 @@ function page() {
       <section className="grid grid-cols-12 grid-rows-12 h-full w-full gap-1">
         <div className="row-span-4 col-span-12 md:col-span-6 lg:col-span-6 h-full w-full">
           <Maintext
-            className="flex h-full w-full  items-center justify-center text-white text-8xl md:text-9xl lg:text-9xl font-majorMono "
+            className="flex h-full w-full  items-center justify-center text-white text-8xl md:text-9xl lg:text-9xl font-major "
             text="WoRK"
           />
         </div>

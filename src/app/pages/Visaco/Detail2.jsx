@@ -20,7 +20,7 @@ function Detail2() {
       </section>
       <section className="flex h-full w-full items-center justify-center pl:0 md:pl-[300px] lg:pl-[300px]  ">
         <Multi
-          className=" w-full   lg:w-[500px]  text-white text-base leading-[1.2]  font-majorMono"
+          className=" w-full   lg:w-[500px]  text-white text-base leading-[1.2]  font-major"
           text="a visa booking application that streamlines and simplifies the online visa application process, allowing users to apply from home without needing to visit an embassy or consulate."
         />
       </section>

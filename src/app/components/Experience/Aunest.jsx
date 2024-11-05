@@ -99,7 +99,7 @@ function Aunest() {
         className="h-[15px] w-[15px] rounded-full bg-white absolute left-[3%] lg:left-[49.6%] top-[200vh] lg:top-[350vh]"
       ></div>
       <Paragraph
-        className=" w-full    text-white text-sm"
+        className=" w-full    text-white text-sm font-major"
         text="sep 2023 - feb 2024"
       />
       <Multi
@@ -114,16 +114,16 @@ function Aunest() {
         />
       </section>
 
-      <section className="flex h-[50vh] lg:h-[100vh]  w-full flex-col items-center justify-center  space-y-2 pl-[8%] lg:pr-[40%]  font-majorMono">
+      <section className="flex h-[50vh] lg:h-[100vh]  w-full flex-col items-center justify-center  space-y-2 pl-[8%] lg:pr-[40%]  font-major">
         <Multi
-          className=" w-full md-w-1/2 lg:w-1/2   text-white text-base leading-[1.2] font-majorMono lowercase"
+          className=" w-full md-w-1/2 lg:w-1/2   text-white text-base leading-[1.2] font-major lowercase"
           text="Utilized ReactJS to build and optimize an admin panel, providing administrative users with robust tools for managing inventory, tracking orders."
         />
       </section>
 
-      <section className="flex h-[50vh] lg:h-[100vh]  w-full flex-col items-center justify-center space-y-2 pl-[8%] lg:pl-[40%]  font-majorMono ">
+      <section className="flex h-[50vh] lg:h-[100vh]  w-full flex-col items-center justify-center space-y-2 pl-[8%] lg:pl-[40%]  font-major ">
         <Multi
-          className=" w-full md-w-1/2 lg:w-1/2   text-white text-base leading-[1.2] font-majorMono lowercase"
+          className=" w-full md-w-1/2 lg:w-1/2   text-white text-base leading-[1.2] font-major lowercase"
           text="Implemented a vendor panel using ReactJS, enabling vendors to manage their products, view analytics, and track orders efficiently."
         />
       </section>

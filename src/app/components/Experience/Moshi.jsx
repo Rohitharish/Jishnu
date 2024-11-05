@@ -80,7 +80,7 @@ function Moshi() {
       className="flex relative flex-col h-[200vh] lg:h-[400vh] w-full px-[5%]  "
     >
       <Maintext
-        className="flex h-[100vh] w-full items-center justify-center text-white text-4xl md:text-9xl lg:text-9xl  font-majorMono"
+        className="flex h-[100vh] w-full items-center justify-center text-white text-4xl md:text-9xl lg:text-9xl  font-major"
         text="eXpeRience"
       />
       <div className="h-[80vh] lg:h-[250vh] w-[0.5px] absolute bg-zinc-800 top-[100vh] left-[5%]  lg:left-1/2"></div>
@@ -102,7 +102,7 @@ function Moshi() {
         className="h-[15px] w-[15px] rounded-full bg-white absolute left-[3%] lg:left-[49.6%] top-[200vh] lg:top-[350vh]"
       ></div>
       <Paragraph
-        className=" w-full    text-white text-sm"
+        className=" w-full    text-white text-sm font-major"
         text="sep 2023 - feb 2024"
       />
       <Multi
@@ -110,23 +110,23 @@ function Moshi() {
         text="Moshi-Moshi"
       />
 
-      <section className="flex h-[50vh] lg:h-[100vh] w-full  flex-col items-end justify-center pl-[8%] lg:pl-[40%]  font-majorMono ">
+      <section className="flex h-[50vh] lg:h-[100vh] w-full  flex-col items-end justify-center pl-[8%] lg:pl-[40%]  font-major ">
         <Multi
-          className=" w-full md-w-1/2 lg:w-1/2    text-white text-base leading-[1.2] font-majorMono lowercase"
+          className=" w-full md-w-1/2 lg:w-1/2    text-white text-base leading-[1.2] font-major lowercase"
           text="Designed and implemented mobile applications for a jewellery management system and an e-commerce management system using React Native. Enhanced features for vendor creation, product recommendations, and product order tracking ."
         />
       </section>
 
-      <section className="flex h-[50vh] lg:h-[100vh]  w-full flex-col items-center justify-center  space-y-2 pl-[8%] lg:pr-[40%]  font-majorMono">
+      <section className="flex h-[50vh] lg:h-[100vh]  w-full flex-col items-center justify-center  space-y-2 pl-[8%] lg:pr-[40%]  font-major">
         <Multi
-          className=" w-full md-w-1/2 lg:w-1/2   text-white text-base leading-[1.2] font-majorMono lowercase"
+          className=" w-full md-w-1/2 lg:w-1/2   text-white text-base leading-[1.2] font-major lowercase"
           text="Utilized ReactJS to build and optimize an admin panel, providing administrative users with robust tools for managing inventory, tracking orders."
         />
       </section>
 
-      <section className="flex h-[50vh] lg:h-[100vh]  w-full flex-col items-center justify-center space-y-2 pl-[8%] lg:pl-[40%]  font-majorMono ">
+      <section className="flex h-[50vh] lg:h-[100vh]  w-full flex-col items-center justify-center space-y-2 pl-[8%] lg:pl-[40%]  font-major ">
         <Multi
-          className=" w-full md-w-1/2 lg:w-1/2   text-white text-base leading-[1.2] font-majorMono lowercase"
+          className=" w-full md-w-1/2 lg:w-1/2   text-white text-base leading-[1.2] font-major lowercase"
           text="Implemented a vendor panel using ReactJS, enabling vendors to manage their products, view analytics, and track orders efficiently."
         />
       </section>
