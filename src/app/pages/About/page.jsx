@@ -2,7 +2,6 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import Link from "next/link";
-
 import Info from "./Info/Info";
 
 function Page() {

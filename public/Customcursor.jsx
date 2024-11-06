@@ -2,7 +2,6 @@
 
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
-import { useCursor } from "@/path/to/CursorContext";
 
 const CustomCursor = ({ size, hoverScale, hoverColor, defaultColor }) => {
   const { cursorState, updateCursorPosition, setHoverState } = useCursor();

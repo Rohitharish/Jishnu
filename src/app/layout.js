@@ -3,6 +3,8 @@ import "./globals.css";
 import ScrollProvider from "./components/Scrollprovider";
 import Menu from "./components/Menu/Menu";
 
+import Preloader from "./components/Preloader/Preloder";
+
 const poppins = Poppins({
   weight: ["400", "700"],
   subsets: ["latin"],
@@ -17,10 +19,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={` ${poppins.className}`}>
+      <body className={` ${poppins.className} custom-cursor`}>
         <ScrollProvider>
-          <Menu />
-          {children}
+          <Preloader>
+            <Menu />
+            {children}
+          </Preloader>
         </ScrollProvider>
       </body>
     </html>
