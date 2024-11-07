@@ -10,7 +10,7 @@ function Page() {
   }, []);
 
   return (
-    <div className="relative h-full w-full ">
+    <div className="relative min-h-screen w-full ">
       <div className="reveal fixed inset-0 bg-black z-50"></div>
       {/* Project zelt */}
       <section className="">

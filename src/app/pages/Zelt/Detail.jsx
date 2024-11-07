@@ -10,7 +10,7 @@ gsap.registerPlugin(ScrollTrigger);
 function Detail() {
   return (
     <div className="relative flex flex-col h-[80vh] md:h-[100vh]  lg:h-[100vh] w-full px-[5%]  ">
-      {/* first detail section */}
+   
       <section className="flex flex-col h-full w-full items-start justify-start">
         <Paragraph className="flex  text-white text-base " text="2019-2010" />
         <Multi

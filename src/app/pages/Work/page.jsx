@@ -54,9 +54,7 @@ function Page() {
 
   return (
     <div className="h-full w-full">
-      {/* Add the CustomCursor component */}
       <CustomCursor />
-
       <section className="grid grid-cols-12 grid-rows-12 h-full w-full gap-1">
         <div className="row-span-4 col-span-12 md:col-span-6 lg:col-span-6 h-full w-full">
           <Maintext
