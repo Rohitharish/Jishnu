@@ -41,6 +41,13 @@ body {
   font-style: normal;
 }
 
+@font-face {
+  font-family: "BrunoAce";
+  src: url("/font/BrunoAce-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
 /* Custom cursor */
 .customCursor {
   position: fixed;

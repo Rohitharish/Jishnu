@@ -9,6 +9,7 @@ module.exports = {
     extend: {
       fontFamily: {
         major: ["MajorMonoDisplay", "monospace"],
+        bruno: ["BrunoAce", "sans-serif"],
       },
 
       backgroundImage: {

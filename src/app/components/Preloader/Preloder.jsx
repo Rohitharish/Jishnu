@@ -6,7 +6,9 @@ import gsap from "gsap";
 
 const Preloader = ({ children }) => {
   const preloaderRef = useRef();
-  const textRef = useRef();
+  const jRef = useRef();
+  const uRef = useRef();
+  const ishnRef = useRef();
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -14,10 +16,40 @@ const Preloader = ({ children }) => {
 
     timeline
       .fromTo(
-        textRef.current,
-        { opacity: 0, y: "100%" },
-        { opacity: 1, y: "0%", duration: 1.5, ease: "power4.out" }
+        [jRef.current, uRef.current],
+        { y: "100%" },
+        { y: "0%", duration: 1, ease: "power4.out" }
       )
+
+      .to(jRef.current, {
+        x: "-55px",
+        duration: 0.5,
+        ease: "power4.out",
+      })
+      .to(
+        uRef.current,
+        {
+          x: "55px",
+          duration: 0.5,
+          ease: "power4.out",
+        },
+        "<"
+      )
+
+      .fromTo(
+        ishnRef.current,
+        { y: "100%" },
+        { y: "0%", duration: 1, ease: "power4.out" },
+        "-=0.5"
+      )
+
+      .to([jRef.current, uRef.current, ishnRef.current], {
+        y: "-100%",
+        duration: 1,
+        ease: "power4.inOut",
+        delay: 0.5,
+      })
+
       .to(preloaderRef.current, {
         y: "-100%",
         duration: 1.5,
@@ -41,6 +73,9 @@ const Preloader = ({ children }) => {
         width: "100%",
         height: "100%",
         backgroundColor: "#D95F0E",
+        backgroundImage: "url('/background.png')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
@@ -48,11 +83,17 @@ const Preloader = ({ children }) => {
         overflow: "hidden",
       }}
     >
-      <img
-        alt="JU image"
-        src="/JUblack.png"
-        className="h-[60px] w-[60px] object-contain"
-      />
+      <div className="flex items-center flex-row -space-x-14 text-4xl overflow-y-clip ">
+        <span ref={jRef} className=" font-bruno translate-y-full">
+          J
+        </span>
+        <span ref={ishnRef} className=" font-bruno translate-y-full">
+          ISHN
+        </span>
+        <span className=" font-bruno translate-y-full" ref={uRef}>
+          U
+        </span>
+      </div>
     </div>
   );
 };
