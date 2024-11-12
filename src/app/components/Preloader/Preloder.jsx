@@ -72,8 +72,8 @@ const Preloader = ({ children }) => {
         left: 0,
         width: "100%",
         height: "100%",
-        backgroundColor: "#D95F0E",
-        backgroundImage: "url('/background.png')",
+        backgroundColor: "black",
+
         backgroundSize: "cover",
         backgroundPosition: "center",
         display: "flex",
