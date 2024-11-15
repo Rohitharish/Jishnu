@@ -19,7 +19,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={` ${poppins.className} custom-cursor`}>
+      <body className=" font-modernist">
         <ScrollProvider>
           <Preloader>
             <Menu />

@@ -10,6 +10,7 @@ module.exports = {
       fontFamily: {
         major: ["MajorMonoDisplay", "monospace"],
         bruno: ["BrunoAce", "sans-serif"],
+        modernist: ["hinted-Sk-Modernist", "sans-serif"],
       },
 
       backgroundImage: {
